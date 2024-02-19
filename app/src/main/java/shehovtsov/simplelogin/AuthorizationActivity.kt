@@ -8,15 +8,15 @@ import androidx.activity.viewModels
 import shehovtsov.simplelogin.screens.AuthorizationScreen
 import shehovtsov.simplelogin.ui.theme.LoginTheme
 
-class MainActivity : ComponentActivity() {
-    private val mainViewModel by viewModels<MainViewModel>()
+class AuthorizationActivity : ComponentActivity() {
+    private val authorizationViewModel by viewModels<AuthorizationViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             LoginTheme {
-                AuthorizationScreen(mainViewModel)
+                AuthorizationScreen(authorizationViewModel)
                 val backPressedHandler = BackHandler {
-                    mainViewModel.resetAuthVisibility()
+                    authorizationViewModel.resetAuthVisibility()
                 }
             }
         }

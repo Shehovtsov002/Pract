@@ -24,7 +24,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import shehovtsov.simplelogin.MainViewModel
+import shehovtsov.simplelogin.AuthorizationViewModel
 import shehovtsov.simplelogin.R
 import shehovtsov.simplelogin.ui.theme.DarkButton
 import shehovtsov.simplelogin.ui.theme.Dimensions
@@ -34,7 +34,7 @@ import shehovtsov.simplelogin.ui.theme.LightButton
 @Preview(showBackground = true)
 @Composable
 fun AuthorizationScreen(
-    mainViewModel: MainViewModel? = null
+    authorizationViewModel: AuthorizationViewModel? = null
 ) {
     Image(
         painter = painterResource(id = R.drawable.login_screen_bg),
@@ -55,7 +55,7 @@ fun AuthorizationScreen(
                 FiledButton(
                     text = stringResource(id = R.string.signin),
                     onClick = {
-                        mainViewModel?.signInVisibility = true
+                        authorizationViewModel?.signInVisibility = true
                     }
                 )
                 FiledButton(
@@ -63,7 +63,7 @@ fun AuthorizationScreen(
                     textColor = DarkButton,
                     background = LightButton,
                     onClick = {
-                        mainViewModel?.signUpVisibility = true
+                        authorizationViewModel?.signUpVisibility = true
                     }
                 )
             }
@@ -75,14 +75,14 @@ fun AuthorizationScreen(
             .fillMaxSize(),
         verticalArrangement = Arrangement.Bottom
     ) {
-        if (mainViewModel?.signInVisibility == true) {
-            AnimatedAuthCard(mainViewModel.signInVisibility) {
-                Login(mainViewModel)
+        if (authorizationViewModel?.signInVisibility == true) {
+            AnimatedAuthCard(authorizationViewModel.signInVisibility) {
+                Login(authorizationViewModel)
             }
         } else {
-            mainViewModel?.signUpVisibility?.let {
+            authorizationViewModel?.signUpVisibility?.let {
                 AnimatedAuthCard(it) {
-                    Registration(mainViewModel)
+                    Registration(authorizationViewModel)
                 }
             }
         }
@@ -91,7 +91,7 @@ fun AuthorizationScreen(
 
 @Composable
 fun Login(
-    mainViewModel: MainViewModel? = null
+    authorizationViewModel: AuthorizationViewModel? = null
 ) {
     val context = LocalContext.current
 
@@ -187,8 +187,8 @@ fun Login(
                 )
                 TextButton(
                     onClick = {
-                        mainViewModel?.signInVisibility = false
-                        mainViewModel?.signUpVisibility = true
+                        authorizationViewModel?.signInVisibility = false
+                        authorizationViewModel?.signUpVisibility = true
                     }
                 ) {
                     Text(
@@ -204,7 +204,7 @@ fun Login(
 
 @Composable
 fun Registration(
-    mainViewModel: MainViewModel? = null
+    authorizationViewModel: AuthorizationViewModel? = null
 ) {
     val context = LocalContext.current
 
@@ -254,8 +254,8 @@ fun Registration(
 
             TextButton(
                 onClick = {
-                    mainViewModel?.signInVisibility = true
-                    mainViewModel?.signUpVisibility = false
+                    authorizationViewModel?.signInVisibility = true
+                    authorizationViewModel?.signUpVisibility = false
                 }
             ) {
                 Text(
