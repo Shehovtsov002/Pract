@@ -5,8 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
-import androidx.compose.runtime.DisposableEffect
-import shehovtsov.simplelogin.screens.LoginScreen
+import shehovtsov.simplelogin.screens.AuthorizationScreen
 import shehovtsov.simplelogin.ui.theme.LoginTheme
 
 class MainActivity : ComponentActivity() {
@@ -15,7 +14,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             LoginTheme {
-                LoginScreen(mainViewModel)
+                AuthorizationScreen(mainViewModel)
                 val backPressedHandler = BackHandler {
                     mainViewModel.resetAuthVisibility()
                 }
