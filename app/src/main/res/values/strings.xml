@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">SimpleLogin</string>
+    <string name="greetings">HELLO</string>
+    <string name="password">Пароль</string>
+    <string name="login">Логин</string>
+    <string name="signin">Войти</string>
+    <string name="forgotpass">Забыли пароль?</string>
+    <string name="noaccount">Нет аккаунта?</string>
+    <string name="hasaccount">Уже есть аккаунт?</string>
+    <string name="register">Регистрация</string>
 </resources>
