@@ -3,13 +3,13 @@ package shehovtsov.simplelogin
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.lifecycle.ViewModel
+import cafe.adriel.voyager.core.model.ScreenModel
+class AuthorizationViewModel : ScreenModel {
 
-class AuthorizationViewModel : ViewModel() {
     var signInVisibility by mutableStateOf(false)
     var signUpVisibility by mutableStateOf(false)
 
-    fun resetAuthVisibility(){
+    fun resetAuthVisibility() {
         signUpVisibility = false
         signInVisibility = false
     }

@@ -11,8 +11,9 @@ object Dimensions {
     const val authCardFraction = .75f
     const val roundedCornerPercent = 10
     const val roundedCornerTextField = 50
+    const val backgroundOpacity = .6f
+    const val columnCount = 2
 
     val standartText = 16.sp
-    val titleLarge = 74.sp
     val buttonText = 18.sp
 }

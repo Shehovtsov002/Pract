@@ -24,7 +24,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import cafe.adriel.voyager.navigator.LocalNavigator
+import cafe.adriel.voyager.navigator.currentOrThrow
 import shehovtsov.simplelogin.AuthorizationViewModel
+import shehovtsov.simplelogin.Home
 import shehovtsov.simplelogin.R
 import shehovtsov.simplelogin.ui.theme.DarkButton
 import shehovtsov.simplelogin.ui.theme.Dimensions
@@ -131,11 +134,11 @@ fun Login(
                 },
                 isPassword = true
             )
-
+            val navigator = LocalNavigator.currentOrThrow
             FiledButton(
                 text = stringResource(id = R.string.signin),
                 onClick = {
-                    // TODO: to BD
+                    navigator.push(Home())
                 }
             )
 
@@ -248,7 +251,7 @@ fun Registration(
             FiledButton(
                 text = stringResource(id = R.string.register),
                 onClick = {
-                    // TODO: add to BD
+                    // TODO: add to db
                 }
             )
 
