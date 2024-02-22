@@ -55,9 +55,10 @@ dependencies {
     implementation("cafe.adriel.voyager:voyager-navigator:$voyagerVersion")
     implementation("cafe.adriel.voyager:voyager-screenmodel:$voyagerVersion")
     implementation("cafe.adriel.voyager:voyager-transitions:$voyagerVersion")
-
+    val lifecycleVersion = "2.7.0"
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
     implementation ("androidx.room:room-ktx:2.6.1")
-    kapt ("androidx.room:room-compiler:2.5.1")
+    kapt ("androidx.room:room-compiler:2.6.1")
     implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
 
     implementation("androidx.compose.material:material-icons-extended:1.6.1")

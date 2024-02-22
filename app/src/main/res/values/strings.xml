@@ -14,4 +14,8 @@
     <string name="create">Создать</string>
     <string name="mail">Почта</string>
     <string name="account">Профиль</string>
+
+    <string name="subscribe">Подписаться</string>
+    <string name="show">Просмотреть</string>
+    <string name="save">Сохранить</string>
 </resources>
